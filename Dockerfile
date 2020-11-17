@@ -1,5 +1,4 @@
-FROM ubuntu:18.10
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y \
 	dirmngr \
@@ -29,8 +28,8 @@ RUN echo 'pref("browser.tabs.remote.autostart", false);' >> /etc/firefox/syspref
 
 COPY opt /opt/
 
-RUN cp /etc/firefox/syspref.js /opt/firefox-57.0.4-nojemalloc/lib/firefox-57.0.4/defaults/pref/ \
- && cp /etc/firefox/syspref.js /opt/firefox-57.0.4-jemalloc/lib/firefox-57.0.4/defaults/pref/
+RUN cp /etc/firefox/syspref.js /opt/firefox-83.0-nojemalloc/lib/firefox-83.0/defaults/pref/ \
+ && cp /etc/firefox/syspref.js /opt/firefox-83.0-jemalloc/lib/firefox-83.0/defaults/pref/
 
 COPY serve /usr/local/bin/
 COPY geckodriver /usr/local/bin/

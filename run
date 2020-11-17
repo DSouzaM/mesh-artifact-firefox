@@ -1,4 +1,4 @@
 #!/bin/bash
 set -euxo pipefail
 
-docker run --rm --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY "$(cat ./IMAGE-NAME)" /opt/firefox-60.2.2-nojemalloc/bin/firefox
+docker run --rm --ipc=host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY "$(cat ./IMAGE-NAME)" /opt/firefox-83.0-nojemalloc/bin/firefox
